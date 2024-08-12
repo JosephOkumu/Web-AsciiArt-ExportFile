@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">  
+<html lang="en">
 <head>
   <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
   <meta charset="UTF-8">
@@ -29,14 +29,23 @@
       <div class="art">
         <pre><p>{{.Result}}</p></pre>
       </div>
-        <button class="back" type="button">
-          <a href="/">Back to Form</a>
-        </button>
+      <form action="/download" method="GET">
+        <input type="hidden" name="content" value="{{.Result}}">
+        <label for="format">Download as:</label>
+        <select name="format" id="format">
+          <option value="txt">Text (TXT)</option>
+          <option value="html">HTML</option>
+        </select>
+        <button type="submit">Download</button>
+      </form>
+      <button class="back" type="button">
+        <a href="/">Back to Form</a>
+      </button>
     </article>
   </main>
   <footer>
     <div class="footer-content">
-        <p>&copy; 2024 Ascii Art Web Converter. All rights reserved.</p>
+      <p>&copy; 2024 Ascii Art Web Converter. All rights reserved.</p>
     </div>
   </footer>
   <script src="/static/script.js"></script>
