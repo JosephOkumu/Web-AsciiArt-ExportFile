@@ -21,8 +21,9 @@ func main() {
 	// Set up route handlers
 	mux.HandleFunc("/", web.HomeHandler)
 	mux.HandleFunc("/ascii-art", web.AsciiArtHandler)
+	mux.HandleFunc("/download", web.DownloadHandler) // New route for download
 
-	log.Println("Starting the server on port 8080")
+	log.Println("Starting the server on port: http://localhost:8080")
 
 	// Create an HTTP server with the specified address and handler
 	server := &http.Server{
